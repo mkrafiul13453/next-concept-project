@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Heart, ArrowShapeTurnUpRight } from "@gravity-ui/icons";
 import { Button, Card } from "@heroui/react";
+import Link from "next/link";
 const PhotoCard = ({ photo }) => {
     const { title, imageUrl, category, likes, downloads } = photo;
     return (
@@ -18,7 +19,7 @@ const PhotoCard = ({ photo }) => {
                     alt="Portrait"
                     width={500}
                     height={500}
-                    className="w-full h-85 object-cover"
+                    className="w-full h-89 object-cover"
                 />
 
                 {/* Badge */}
@@ -48,13 +49,10 @@ const PhotoCard = ({ photo }) => {
             </div>
 
             {/* Button */}
-            <Button
-                radius="full"
-                variant="secondary"
-                className="w-full mt-6 h-14 text-xl font-semibold border-gray-300 bg-white"
-            >
+            <Link href={`/all-photos/${photo.id}`}>
+            <Button radius="full" variant="outline" className="w-full mt-6 h-14 text-xl font-semibold border-gray-300 bg-white">
                 View
-            </Button>
+            </Button></Link>
             {/* </Card> */}
         </Card>
     );
