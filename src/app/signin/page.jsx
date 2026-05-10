@@ -1,5 +1,5 @@
 "use client";
-import { Check } from "@gravity-ui/icons";
+import { Check, GeoPolygons } from "@gravity-ui/icons";
 import {
     Button,
     Card,
@@ -29,6 +29,12 @@ export default function SignInPage() {
         })
         console.log({ data, error });
     };
+
+    const handelGoogleSignIn = async()=>{
+        await authClient.signIn.social({
+            provider:"google"
+        })
+    }
 
     return (
         <Card className="border mx-auto w-125 py-10 mt-5">
@@ -101,6 +107,8 @@ export default function SignInPage() {
                     </Button>
                 </div>
             </Form>
+            <p className="text-3xl font-bold">Or</p>
+            <Button onClick={handelGoogleSignIn} className="w-full" variant="outline"> Sign In with Google</Button>
         </Card>
     );
 }
