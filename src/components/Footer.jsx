@@ -44,7 +44,7 @@ const Footer = () => {
                     {/* Product */}
                     <div>
                         <h3 className="text-sm font-semibold text-black dark:text-white mb-4">
-                            Productttttttttttttttttttttttttttttttttttttttttttt
+                            Product
                         </h3>
                         <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
                             <li>
